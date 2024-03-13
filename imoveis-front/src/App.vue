@@ -1,9 +1,8 @@
 <template>
-  <h1 class="bg-blue-400">Ola Patrick</h1>
-</template>
+    <router-view />
+  </template>
 
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <style scoped>
