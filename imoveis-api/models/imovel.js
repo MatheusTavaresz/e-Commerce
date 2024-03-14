@@ -1,6 +1,7 @@
-const mongoose = require('mongoose')
+const { Schema, model } = require('mongoose')
 
-const imovelSchema = new mongoose.Schema({
+
+const imovelSchema = new Schema({
     nomeDoCondominio: String,
     cidade: String,
     bairro: String,
@@ -27,6 +28,6 @@ const imovelSchema = new mongoose.Schema({
     }
 });
 
-const Imovel = mongoose.model('Imovel', imovelSchema)
+const Imovel = model('Imovel', imovelSchema)
 
 module.exports = Imovel;

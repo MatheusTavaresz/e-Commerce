@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const axiosClient = axios.create({
-  baseURL: 'https://www.themealdb.com/api/json/v1/1/'
+  baseURL: 'http://localhost:3100/'
 })
 
 export default axiosClient;
