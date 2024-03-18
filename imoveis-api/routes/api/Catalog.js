@@ -1,6 +1,7 @@
 const { Router } = require('express')
 const Imovel = require('../../models/imovel')
-
+const multer  = require('multer')
+const upload = multer({ dest: 'uploads/' })
 const router = Router()
 
 router.get('/', async (req, res) => {
@@ -13,7 +14,7 @@ router.get('/', async (req, res) => {
     }
 })
 
-router.post('/', async (req, res) => {
+router.post('/', upload.single('imagem'), async (req, res) => {
     const imovel = new Imovel(req.body)
     try {
         const saveImovel = await imovel.save()

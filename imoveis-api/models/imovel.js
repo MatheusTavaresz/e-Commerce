@@ -2,15 +2,12 @@ const { Schema, model } = require('mongoose')
 
 
 const imovelSchema = new Schema({
+    imagem: String,
     nomeDoCondominio: String,
     cidade: String,
     bairro: String,
-    endereçoCompleto: String,
     numeroDeQuartos: Number,
-    dimensoes: Number,
     tipoDeImovel: String, 
-    areaTotal: Number, 
-    areaUtil: Number, 
     numeroDeVagasDeGaragem: Number, 
     numeroDeBanheiros: Number, 
     andar: Number,
@@ -19,13 +16,7 @@ const imovelSchema = new Schema({
     possuiChurrasqueira: Boolean, 
     possuiAreaDeServico: Boolean, 
     possuiArmariosEmbutidos: Boolean, 
-    possuiPiscina: Boolean, 
-    distanciasPontosDeInteresse: {
-        praia: Number,
-        shopping: Number,
-        mercado: Number,
-        faculdade: Number,
-    }
+    possuiPiscina: Boolean
 });
 
 const Imovel = model('Imovel', imovelSchema)
