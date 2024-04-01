@@ -13,11 +13,7 @@ app.use(express.json());
 app.use(cors())
 
 mongoose
-    .connect(MONGOURI, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-
-    })
+    .connect(MONGOURI)
     .then(() => console.log('MongoDB database Connected...'))
     .catch((err) => console.log(err))
 
