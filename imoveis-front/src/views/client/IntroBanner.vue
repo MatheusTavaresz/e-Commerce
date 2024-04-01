@@ -1,8 +1,8 @@
 <template>
-  <div class="bg-[#0F2433] h-[70vh] relative overflow-hidden flex">
-  <img src="../../assets/cover.jpg" class="h-full pl-[5.5vh]"/>
-  <img :src="currentImage" class="transition-all duration-500 ease-out p-2.5 w-full" />
-  </div>
+<div class="bg-[#0F2433] h-[70vh] relative overflow-hidden flex flex-col justify-center items-center">
+  <img src="../../assets/cover.jpg" class="h-[50%] sm:h-full w-auto" />
+  <img :src="currentImage" class="transition-all duration-500 ease-out p-2.5 w-full max-w-[90%] sm:max-w-none" />
+</div>
   <div class="h-full bg-slate-200 py-8">
     <div class="max-w-4xl mx-auto px-4">
       <h3 class="text-center text-3xl font-semibold mb-4">Vantagens de usar nossa plataforma</h3>
