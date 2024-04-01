@@ -1,20 +1,3 @@
-<template>
-  <div class="card">
-    <div class="card-header">
-      <h3>{{ title }}</h3>
-    
-    </div>
-    <div class="card-body">
-      <p><strong>Cidade: </strong>{{ cidade }}</p>
-      <p><strong>Bairro: </strong>{{ bairro }}</p>
-      <p><strong>Tipo de Imovel: </strong>{{ tipoImovel }}</p>
-    </div>
-    <div class="card-footer">
-      <button @click="handleButtonClick">{{ buttonText }}</button>
-    </div>
-  </div>
-</template>
-
 <script>
 export default {
   props: {
@@ -24,6 +7,10 @@ export default {
     },
     cidade: {
       type: String,
+      required: true
+    },
+    andar: {
+      type: Number,
       required: true
     },
     bairro: {
@@ -36,7 +23,11 @@ export default {
     },
     buttonText: {
       type: String,
-      default: "Click me"
+      default: "Conferir"
+    },
+    imagem: {
+      type: String,
+      required: true
     }
   },
   methods: {
@@ -47,27 +38,33 @@ export default {
 }
 </script>
 
-<style scoped>
-.card {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  overflow: hidden;
-  margin-bottom: 20px;
+<template>
+  <div class="bg-white border shadow-slate-300 shadow-md m-4">
+    <div class="p-4 bg-cover w-full md:w-[390px] h-[250px] md:h-[500px] cursor-pointer">
+      <div class="mb-5 bg-slate-200 opacity-60 flex flex-col md:mt-[50%] hover:opacity-100 transition-opacity">
+        <h3 class="text-lg text-center font-semibold">{{ title }}</h3>
+        <span class="card-border"><p class="m-2"><strong>Cidade: </strong>{{ cidade }}</p></span>
+        <span class="card-border"><p class="m-2"><strong>Bairro: </strong>{{ bairro }}</p></span>
+        <span class="card-border"><p class="m-2"><strong>Andar: </strong>{{ andar }}</p></span>
+        <span class="card-border"><p class="m-2"><strong>Tipo de Imóvel: </strong>{{ tipoImovel }}</p></span>
+        <button type="button" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-1 focus:ring-green-300 font-medium rounded-sm text-sm px-5 py-2.5 m-1 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+          Conferir
+        </button>
+      </div>
+   </div>
+  </div>
+</template>
+
+<style>
+p {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.card-header {
-  background-color: #f0f0f0;
-  padding: 10px;
-  text-align: center;
-}
-
-.card-body {
-  padding: 20px;
-}
-
-.card-footer {
-  background-color: #f0f0f0;
-  padding: 10px;
-  text-align: center;
+.card-border{ 
+  border-color: greenyellow;
+  border-left-width: 3px;
+  border-left-style: inherit;
+  margin-bottom: 5px;
 }
 </style>
+

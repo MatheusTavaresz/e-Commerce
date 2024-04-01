@@ -1,11 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/client/Home.vue'
+import Catalog from '../views/client/Catalog.vue'
 import PropertyList from '../views/client/PropertyList.vue'
+import IntroBanner from '../views/client/IntroBanner.vue'
+
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: Home
+    name: 'catalog',
+    component: Catalog
   },
   {
     path: '/catalog/:city',
@@ -18,6 +20,11 @@ const routes = [
         component: PropertyList
       }
     ]
+  },
+  {
+    path: '/intro',
+    name: 'introcution',
+    component: IntroBanner,
   }
 ]
 
