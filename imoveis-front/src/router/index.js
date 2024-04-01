@@ -6,8 +6,12 @@ import IntroBanner from '../views/client/IntroBanner.vue'
 const routes = [
   {
     path: '/',
-    name: 'catalog',
-    component: Catalog
+    name: 'intro',
+    component: IntroBanner
+  },
+  {
+    path: '/apartment/:nomeDoCondominio/:andar',
+    name: 'apartment'
   },
   {
     path: '/catalog/:city',

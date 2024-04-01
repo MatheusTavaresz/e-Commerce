@@ -17,7 +17,6 @@ router.get('/', async (req, res) => {
 router.post('/', upload.single('imagem'), async (req, res) => {
     const imovel = new Imovel(req.body)
     try {
-        const saveImovel = await imovel.save()
         if (!imovel) throw new Error('Something went wrong saving the imovel')
         res.status(200).json(imovel)
     } catch (error) {
